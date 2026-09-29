@@ -1,0 +1,7 @@
+visualization:
+  quiet_max: 40
+  normal_max: 60
+  elevated_max: 80
+  extreme_min: 95
+  max_ports_zoomed_out: 700
+

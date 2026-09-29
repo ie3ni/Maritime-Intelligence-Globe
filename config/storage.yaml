@@ -1,0 +1,5 @@
+storage:
+  data_dir: data
+  database_path: database/maritime.duckdb
+  activity_partition: year
+

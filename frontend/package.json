@@ -1,0 +1,10 @@
+{
+  "name": "maritime-intelligence-globe-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.19.0",
+  "type": "module",
+  "scripts": {"dev":"vite --host 127.0.0.1", "build":"tsc && vite build", "preview":"vite preview --host 127.0.0.1"},
+  "dependencies": {"cesium":"^1.124.0", "chart.js":"^4.4.7"},
+  "devDependencies": {"@types/node":"^22.10.2", "typescript":"^5.7.2", "vite":"^6.0.3", "vite-plugin-static-copy":"^2.2.0"}
+}

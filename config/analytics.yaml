@@ -1,0 +1,10 @@
+baseline:
+  rolling_days: 56
+  minimum_history_days: 30
+activity_score:
+  volume_weight: 0.65
+  port_calls_weight: 0.35
+  z_clip: 3.5
+port_classification:
+  minimum_typed_calls: 20
+  tanker_dominant_share: 0.8

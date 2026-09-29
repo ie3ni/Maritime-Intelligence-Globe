@@ -1,0 +1,75 @@
+sources:
+  aisstream:
+    enabled: true
+    websocket_url: wss://stream.aisstream.io/v0/stream
+    # Global coverage is explicit and still uses one compressed WebSocket.
+    subscription_mode: global
+    allow_global_subscription: true
+    subscription_padding_km: 12
+    subscription_tile_degrees: 5
+    maximum_subscription_boxes: 500
+    maximum_subscription_coverage_pct: 100
+    process_each_vessel_every_seconds: 60
+    cache_ttl_hours: 6
+    maximum_messages_per_minute: 30000
+    maximum_megabytes_per_minute: 24
+    maximum_consecutive_failures: 5
+    reconnect_initial_seconds: 5
+    reconnect_maximum_seconds: 300
+    manifest_write_interval_seconds: 60
+    port_radius_km: 8
+    minimum_dwell_minutes: 20
+    maximum_dwell_speed_knots: 3
+    maximum_observation_gap_minutes: 30
+    same_port_cooldown_hours: 6
+    route_minimum_interval_seconds: 120
+    route_force_interval_seconds: 600
+    route_minimum_distance_km: 1
+    route_minimum_course_change_degrees: 15
+    route_batch_interval_seconds: 15
+    route_batch_max_points: 1500
+    route_retention_hours: 72
+    port_call_retention_days: 180
+    maintenance_interval_hours: 24
+    route_api_hours: 6
+    route_api_maximum_vessels: 800
+    route_api_maximum_points_per_vessel: 40
+  noaa_historical_ais:
+    enabled: true
+    erddap_base_url: https://data.pmel.noaa.gov/pmel/erddap/tabledap
+    dataset_id_template: AIS{year}_AIS
+    bulk_base_url: https://coast.noaa.gov/htdata/CMSP/AISDataHandler
+    # Published annual datasets currently listed by NOAA PMEL ERDDAP.
+    source_earliest_date: 2018-01-01
+    source_latest_date: 2023-12-31
+    maximum_days_per_run: 7
+    request_chunk_hours: 1
+    maximum_download_megabytes_per_chunk: 256
+    maximum_download_megabytes_per_day: 2048
+    maximum_expanded_gigabytes_per_day: 16
+    sample_minutes: 10
+    weekly_sample_weekday: 2  # Wednesday; Python weekday numbering starts Monday at 0.
+    weekly_sample_minutes: 30
+    weekly_estimated_source_gigabytes: 79
+    route_api_maximum_vessels: 800
+    route_api_maximum_points_per_vessel: 120
+    source_label: NOAA Historical AIS
+    coverage_label: U.S. waters only
+  portwatch:
+    enabled: true
+    revision_lookback_days: 14
+    page_size: 1000
+    activity_url: https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Ports_Data/FeatureServer/0/query
+    ports_url: https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/PortWatch_ports_database/FeatureServer/0/query
+  nga_world_port_index:
+    enabled: true
+    refresh_ttl_days: 7
+    page_size: 3000
+    minimum_records: 1000
+    name_maximum_distance_km: 50
+    proximity_maximum_distance_km: 8
+    ambiguity_margin_km: 3
+    layer_url: https://fgmod.nga.mil/nauticalpubs-feature/rest/services/WPI/World_Port_Index_Viewer/FeatureServer/0/query
+  natural_earth:
+    enabled: true
+    note: Cesium NaturalEarthII tiles are bundled into the frontend build

@@ -1,0 +1,107 @@
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+.envrc
+.direnv/
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Downloaded, derived, cached, and live maritime data
+# Keep all provider data—including the generated NGA WPI enrichment cache and
+# date-partitioned NOAA historical AIS routes—out of the source repository
+# regardless of format. Reproducible pipelines and configuration remain tracked.
+data/
+database/
+*.duckdb
+*.duckdb.*
+*.parquet
+*.arrow
+*.feather
+*.csv
+*.csv.gz
+*.ndjson
+*.jsonl
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.gpkg
+*.geojson
+*.shp
+*.shx
+*.dbf
+*.prj
+*.tif
+*.tiff
+
+# Python environments, caches, coverage, and build artifacts
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.hypothesis/
+.tox/
+.nox/
+.cache/
+.uv-cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+build/
+dist/
+*.egg-info/
+*.whl
+
+# Frontend dependencies, package-manager state, and generated builds
+node_modules/
+frontend/dist/
+.pnpm-store/
+.npm/
+.yarn/
+.vite/
+*.tsbuildinfo
+
+# Logs, runtime state, and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.temp
+*.pid
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.db-wal
+*.db-shm
+
+# IDE and operating-system metadata
+.idea/
+.vscode/
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+*.orig
+*.rej
+
+# Local notebooks and ad-hoc exports
+.ipynb_checkpoints/
+exports/

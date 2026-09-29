@@ -1,0 +1,9 @@
+network:
+  max_concurrent_requests_per_host: 2
+  minimum_request_interval_seconds: 0.5
+  timeout_seconds: 30
+  max_retries: 5
+  backoff_initial_seconds: 1
+  backoff_max_seconds: 60
+  honor_retry_after: true
+
